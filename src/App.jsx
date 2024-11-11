@@ -7,11 +7,9 @@ function App() {
     <>
       <div className="wrapper">
         <div className="header">
-          <h1>Min reseplanerare</h1>
+          <h1>Reseplaneraren</h1>
         </div>
-        <div className="trip-planner">
           <TripPlanner />
-        </div>
       </div>
     </>
   )

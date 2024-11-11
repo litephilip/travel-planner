@@ -1,19 +1,46 @@
-.destination-container {
+.destinations-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.2rem 1rem;
+    flex-direction: column;
+    gap: 15px;
 }
-
+  
 .destination-card {
-    background-color: rgb(227, 51, 12);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 16px;
-    transition: 0.3s;
-    list-style-type: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.remove-button {
+    position: absolute;
+    text-align: end;
+    padding: 0 0.5rem;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
-.destination-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
+p {
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+}
+  
+.destination-name {
+    margin-bottom: 5px;
+
+}
+  
+.destination-activity {
+    font-size: 0.9rem;
+}
+  

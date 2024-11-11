@@ -1,36 +1,51 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
+import './DestinationForm.css';
 
 function DestinationForm({ onAddDestination }) {
     const [name, setName] = useState('');
     const [activity, setActivity] = useState('');
+    const [error, setError] = useState(false)
   
     const handleSubmit = (e) => {
+      console.log('submit');
+      
       e.preventDefault();
-      onAddDestination({ name, activity });
-      setName('');
-      setActivity('');
+      console.log('error');
+      if (!name || !activity) {
+        setError(true);
+      } else {
+        onAddDestination({ name, activity });
+        setName('');
+        setActivity('');
+        setError(false);
+      }
     };
   
-    return (
-      <form onSubmit={handleSubmit}>
+  
+  
+  return (
+    <form className="add-destination-form" onSubmit={handleSubmit}>
+      <div className="input-container">
         <input
           type="text"
-          placeholder="Resmål"
+          placeholder="Välj önskat resmål"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          required
-        />
+          aria-label="Resmål"
+          />
         <input
           type="text"
-          placeholder="Aktivitet"
+          placeholder="Vad vill du göra där?"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
-          required
+          aria-label="Aktivitet"
         />
-        <button type="submit">Lägg till resmål</button>
-      </form>
-    );
+      </div>
+      {error && <span className="error-message">Oops, du glömde visst att fylla i fälten</span>}
+      <button type="submit">Lägg till resmål</button>
+    </form>
+  );
 }
 DestinationForm.propTypes = {
   onAddDestination: PropTypes.func.isRequired,
