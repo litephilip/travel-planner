@@ -1,5 +1,6 @@
 .trip-planner {
     width: 550px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2.5rem 1.5rem;
     background-color: #ffffff;
@@ -9,16 +10,25 @@
   
 .trip-planner-title {
     font-size: 1.5rem;
+    margin: 0.5rem  0 !important;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: left;
     color: black;
 }
 
+.trip-planner-paragraph {
+    color: black;
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0 0 0.4rem 0;
+    margin-bottom: 2rem;
+}
+
 @media (max-width: 600px) {
     .trip-planner {
-        max-width: 380px;
-        padding: 8px;
+        max-width: 350px;
+        padding: 0.5rem;
     }
     .trip-planner-title {
         font-size: 1.2rem;

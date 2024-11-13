@@ -40,6 +40,7 @@ function TripPlanner() {
     return (
         <div className="trip-planner">
             <h2 className="trip-planner-title">Börja planera dina aktiviter här!</h2>
+            <p className="trip-planner-paragraph">Gör din egen checklista av saker att göra när du besöker ditt drömresemål och bocka av dem när du är färdig!</p>
             <DestinationForm onAddDestination={addDestination} />
             <ul className="destinations-list">
                 {destinations.map((destination, index) => (

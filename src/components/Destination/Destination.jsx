@@ -9,7 +9,7 @@ function Destination(props) {
             <li className={`destination-card ${props.destination.isCompleted ? 'completed' : ''}`} onClick={props.toggleComplete}>
                 <p className="destination-name">Plats: { props.destination.name }</p>
                 <p className="destination-activity">Att göra: {props.destination.activity} </p>
-                <span className="remove-button" onClick={props.remove}>X</span>
+                <span className="remove-button" onClick={(e) => {console.log(e), e.stopPropagation(); props.remove();}}>X</span>
                 {!props.destination.isCompleted && <p className="done">Klicka för att klarmarkera!</p>}
             </li>
         </div>

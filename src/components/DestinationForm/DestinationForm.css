@@ -47,3 +47,13 @@ button:hover {
     font-size: 0.8rem;
     margin-top: 0.1rem;
 }
+
+@media (max-width: 600px) {
+    .input-container {
+        flex-direction: column;
+    }
+    input[type="text"] {
+        width: 90%;
+        max-width: none;
+    }
+}
