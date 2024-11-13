@@ -1,19 +1,32 @@
 .destinations-list {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    padding-left: 0;
+    gap: 1rem;
 }
   
 .destination-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    flex: 1 1;
+    padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 230px;
 }
+
+.destination-card:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+  }
+
+.destination-card.completed {
+    background-color: rgba(0, 255, 0, 0.277);
+  }
 
 .remove-button {
     position: absolute;
@@ -32,15 +45,22 @@
 p {
     font-weight: bold;
     color: black;
-    font-size: 1rem;
-}
-  
-.destination-name {
-    margin-bottom: 5px;
-
-}
-  
-.destination-activity {
     font-size: 0.9rem;
+    margin: 0 0 0.4rem 0;
 }
+
+.done {
+    font-weight: lighter;
+    font-style: oblique;
+    font-size: 8px;
+    text-align: start;
+    margin: 0 0 -5px 0;
+}
+
+@media (max-width: 600px) {
+    .destinations-list {
+        flex-direction: column;
+    }
+}
+  
   

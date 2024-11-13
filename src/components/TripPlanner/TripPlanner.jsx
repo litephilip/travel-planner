@@ -20,11 +20,20 @@ function TripPlanner() {
     
 
     const addDestination = (destination) => {
-        setDestinations([...destinations, destination]);
+        const newDestination = { ...destination, isCompleted: false };
+        setDestinations([...destinations, newDestination]);
+    };
+
+    const toggleComplete = (index) => {
+        const updatedDestinations = destinations.map((destination, i) =>
+          i === index ? { ...destination, isCompleted: !destination.isCompleted } : destination
+        );
+        setDestinations(updatedDestinations);
     };
     
-    const removeDestination = (index) => {        
-        setDestinations(destinations.filter((destination, i ) => i !== index));
+
+    const removeDestination = (index) => {            
+        setDestinations(destinations.filter((_, i ) => i !== index));
     };
 
     
@@ -37,6 +46,7 @@ function TripPlanner() {
                 <Destination 
                     key={index}
                     destination={destination}
+                    toggleComplete={() => toggleComplete(index)}
                     remove={() => removeDestination(index)}
                     />
                 ))}

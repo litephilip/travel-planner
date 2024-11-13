@@ -1,10 +1,10 @@
 .trip-planner {
-    width: 400px;
+    width: 550px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2.5rem 1.5rem;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 16px 17px 17px 12px rgba(0, 0, 0, 0.9);
 }
   
 .trip-planner-title {
@@ -13,4 +13,14 @@
     margin-bottom: 20px;
     text-align: left;
     color: black;
+}
+
+@media (max-width: 600px) {
+    .trip-planner {
+        max-width: 380px;
+        padding: 8px;
+    }
+    .trip-planner-title {
+        font-size: 1.2rem;
+    }
 }

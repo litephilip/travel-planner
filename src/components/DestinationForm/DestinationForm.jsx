@@ -8,10 +8,8 @@ function DestinationForm({ onAddDestination }) {
     const [error, setError] = useState(false)
   
     const handleSubmit = (e) => {
-      console.log('submit');
-      
+    
       e.preventDefault();
-      console.log('error');
       if (!name || !activity) {
         setError(true);
       } else {
