@@ -1,18 +1,8 @@
-import TripPlanner from './components/TripPlanner/TripPlanner';
-import './App.css'
+import AppRouter from './AppRouter';
+import './App.css';
 
-function App() {
+const App = () => {
+  return <AppRouter />;
+};
 
-  return (
-    <>
-      <div className="wrapper">
-        <div className="header">
-          <h1>Reseplaneraren</h1>
-        </div>
-          <TripPlanner />
-      </div>
-    </>
-  )
-}
-
-export default App
+export default App;
