@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -63,6 +63,11 @@ const DoneText = styled.p`
 `;
 
 const Destination = React.memo((props) => {
+
+    const completionText = useMemo(() => {
+        return props.destination.isCompleted ? "" : "Klicka för att klarmarkera!";
+    }, [props.destination.isCompleted]);
+    
     return (
         <DestinationContainer>
         <DestinationCard
@@ -78,7 +83,7 @@ const Destination = React.memo((props) => {
             X
             </RemoveButton>
             {!props.destination.isCompleted && (
-            <DoneText>Klicka för att klarmarkera!</DoneText>
+            <DoneText>{completionText}</DoneText>
             )}
         </DestinationCard>
         </DestinationContainer>

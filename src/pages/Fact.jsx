@@ -13,26 +13,39 @@ const FactWrapper = styled.div`
   }
 `;
 
-const FlagWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
+
+const FactContent = styled.div`
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 16px 17px 17px 12px rgba(0, 0, 0, 0.9);
+  min-width: 230px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const Flag = styled.img`
-  width: 100px;
+  width: 150px;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
 `;
 
-const FactContent = styled.div`
-  margin-top: 2rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+const FactText = styled.p`
+  font-weight: bold;
+  color: black;
+  font-size: 0.9rem;
+  margin: 0 0 0.4rem 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
+
 
 const DropdownContainer = styled.div`
   display: flex;
@@ -100,8 +113,12 @@ const Fact = () => {
     }, []);
     
     if (loading) {
-        return <p>Laddar data...</p>;
+        setTimeout(() => {
+            setLoading(false);
+            return <p>Laddar data...</p>;
+        },1000);
     }
+    
 
     const handleShowFact = () => {
         const country = countries.find((country) => country.name === selectedCountry);
@@ -131,14 +148,12 @@ const Fact = () => {
 
       {countryFact && (
         <FactContent>
-          <FlagWrapper className="flag-wrapper">
             <Flag src={countryFact.flagUrl} alt={`Flag of ${countryFact.name}`} />
-            <p> {countryFact.name.toUpperCase()}</p>
-          </FlagWrapper>
-          <p>Valuta: {countryFact.currency}</p>
-          <p>Huvudstad: {countryFact.capital}</p>
-          <p>Befolkning: {countryFact.population.toLocaleString()}</p>
-          <p>Medlem i FN: {countryFact.unMember ? "JA" : countryFact.unMember === false ? "NEJ" : "Okänd"}</p>
+                  <h2 style={{ color: "black"}}> {countryFact.name.toUpperCase()}</h2>
+            <FactText>Valuta: {countryFact.currency}</FactText>
+            <FactText>Huvudstad: {countryFact.capital}</FactText>
+            <FactText>Befolkning: {countryFact.population.toLocaleString()}</FactText>
+            <FactText>Medlem i FN: {countryFact.unMember ? "JA" : countryFact.unMember === false ? "NEJ" : "Okänd"}</FactText>
         </FactContent>
       )}
     </FactWrapper>
