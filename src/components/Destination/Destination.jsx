@@ -63,9 +63,7 @@ const DoneText = styled.p`
 `;
 
 const Destination = React.memo((props) => {
-    console.log('sdfsdf', props);
-    
-  return (
+    return (
         <DestinationContainer>
         <DestinationCard
             isCompleted={props.destination.isCompleted}
