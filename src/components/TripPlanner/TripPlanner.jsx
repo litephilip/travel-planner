@@ -13,8 +13,10 @@ const TripPlannerWrapper = styled.div`
   box-shadow: 16px 17px 17px 12px rgba(0, 0, 0, 0.9);
 
   @media (max-width: 600px) {
-    max-width: 350px;
+    max-width: 315px;
     padding: 0.5rem;
+    margin: 0;
+    box-shadow: 9px 10px 10px 4px rgba(0, 0, 0, 0.9);
   }
 `;
 

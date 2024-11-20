@@ -13,7 +13,6 @@ const FactWrapper = styled.div`
   }
 `;
 
-
 const FactContent = styled.div`
   position: relative;
   padding: 1rem;
@@ -25,7 +24,8 @@ const FactContent = styled.div`
   min-width: 230px;
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 90%;
+    box-shadow: 9px 10px 10px 5px rgba(0, 0, 0, 0.9);
   }
 `;
 
@@ -33,6 +33,10 @@ const Flag = styled.img`
   width: 150px;
   height: auto;
   border-radius: 8px;
+
+  @media (max-width: 600px) {
+    width: 100px;
+  }
 `;
 
 const FactText = styled.p`
@@ -57,21 +61,27 @@ const DropdownContainer = styled.div`
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
+    margin-right: 1rem;
+    @media (max-width: 600px) {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
   }
   
   button {
     background-color: #fff;
     color: #6b42f5;
-
+    @media (max-width: 600px) {
+        width: 100%;
+        margin-left: 0;
+    }
   }
 
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: stretch;
 
-    button {
-      width: 100%;
-    }
+
   }
 `;
 

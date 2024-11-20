@@ -2,10 +2,17 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
-    display: flex;
-    gap: 2rem;
-    padding: 1.5rem 3rem;
-    color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem ;
+  color: #fff;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -33,13 +40,17 @@ const NavLink = styled(Link)`
   &:hover::after {
     width: 100%; 
   }
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Nav = () => {
   return (
     <NavBar>
-      <NavLink to="/home">Reseplaneraren</NavLink>
-      <NavLink to="/facts">Inspo</NavLink>
+      <NavLink to="/home">Planera</NavLink>
+      <NavLink to="/facts">Fakta</NavLink>
       <NavLink to="/about-us">Om oss</NavLink>
     </NavBar>
   );
