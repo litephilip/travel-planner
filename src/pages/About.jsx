@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 const AboutWrapper = styled.div`
-  max-width: 80%;
-  text-align: left;
+  width: 550px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
 
@@ -13,7 +16,7 @@ const AboutWrapper = styled.div`
 `;
 
 const AboutTitle = styled.h1`;
-  text-align: left;
+  text-align: center;
 
   @media (max-width: 600px) {
     font-size: 2.5rem;
